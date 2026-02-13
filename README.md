@@ -1,5 +1,7 @@
 # zip-hider
 
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/Ismola/zip-hider)
+
 🖼️ **Zip Hider** - Aplicación web para ocultar archivos ZIP dentro de imágenes de forma segura y privada.
 
 ## 📋 Descripción
@@ -138,6 +140,9 @@ Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 ## 👤 Autor
 
 **Ismola**
+
+- GitHub: [@Ismola](https://github.com/Ismola)
+- Repositorio: [zip-hider](https://github.com/Ismola/zip-hider)
 
 ## ⚠️ Aviso Legal
 
