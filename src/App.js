@@ -15,7 +15,7 @@ function App() {
       setCombinedFile(null);
       setError(null);
     } else {
-      setError('Por favor, selecciona un archivo de imagen válido');
+      setError('Please select a valid image file');
     }
   };
 
@@ -26,13 +26,13 @@ function App() {
       setCombinedFile(null);
       setError(null);
     } else {
-      setError('Por favor, selecciona un archivo ZIP válido');
+      setError('Please select a valid ZIP file');
     }
   };
 
   const combineFiles = async () => {
     if (!imageFile || !zipFile) {
-      setError('Por favor, selecciona ambos archivos (imagen y ZIP)');
+      setError('Please select both files (image and ZIP)');
       return;
     }
 
@@ -60,7 +60,7 @@ function App() {
       setCombinedFile(file);
     } catch (error) {
       console.error('Error combining files:', error);
-      setError('Error al combinar los archivos');
+      setError('Error combining files');
     } finally {
       setIsProcessing(false);
     }
@@ -90,7 +90,7 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>🖼️ Zip Hider</h1>
-        <p className="subtitle">Oculta archivos ZIP dentro de imágenes</p>
+        <p className="subtitle">Hide ZIP files inside images</p>
 
         {error && (
           <div className="error-message" role="alert">
@@ -101,7 +101,7 @@ function App() {
         <div className="upload-section">
           <div className="upload-box">
             <label htmlFor="image-upload" className="file-label">
-              📷 Seleccionar Imagen
+              📷 Select Image
             </label>
             <input
               id="image-upload"
@@ -115,7 +115,7 @@ function App() {
 
           <div className="upload-box">
             <label htmlFor="zip-upload" className="file-label">
-              📦 Seleccionar ZIP
+              📦 Select ZIP
             </label>
             <input
               id="zip-upload"
@@ -134,37 +134,47 @@ function App() {
             disabled={!imageFile || !zipFile || isProcessing}
             className="btn btn-primary"
           >
-            {isProcessing ? '⏳ Procesando...' : '🔗 Combinar Archivos'}
+            {isProcessing ? '⏳ Processing...' : '🔗 Combine Files'}
           </button>
 
           {combinedFile && (
             <div className="result-section">
-              <p className="success-message">✅ Archivo combinado exitosamente!</p>
+              <p className="success-message">✅ Files combined successfully!</p>
               <button onClick={downloadCombinedFile} className="btn btn-download">
-                💾 Descargar Imagen con ZIP Oculto
+                💾 Download Image with Hidden ZIP
               </button>
               <button onClick={reset} className="btn btn-secondary">
-                🔄 Nuevo
+                🔄 New
               </button>
             </div>
           )}
         </div>
 
         <div className="info-section">
-          <h3>ℹ️ Cómo funciona</h3>
+          <h3>ℹ️ How it works</h3>
           <p>
-            Esta aplicación combina un archivo ZIP con una imagen, ocultando el ZIP
-            dentro de la imagen (similar al comando <code>copy/b</code> de Windows).
+            This application combines a ZIP file with an image, hiding the ZIP
+            inside the image (similar to the Windows <code>copy/b</code> command).
           </p>
           <p>
-            La imagen resultante se puede abrir normalmente, pero también contiene
-            el archivo ZIP que puede extraerse cambiando la extensión a .zip.
+            The resulting image can be opened normally, but it also contains
+            the ZIP file which can be extracted by changing the extension to .zip.
           </p>
           <p>
-            <strong>Todo el procesamiento se realiza en tu navegador.</strong> No se
-            envían archivos a ningún servidor.
+            <strong>All processing is done in your browser.</strong> No files
+            are sent to any server.
           </p>
         </div>
+
+        <footer className="footer">
+          <p>
+            Made with ❤️ by <a href="https://github.com/Ismola" target="_blank" rel="noopener noreferrer">Ismola</a>
+            {' • '}
+            <a href="https://github.com/Ismola/zip-hider" target="_blank" rel="noopener noreferrer">
+              View on GitHub
+            </a>
+          </p>
+        </footer>
       </div>
     </div>
   );
