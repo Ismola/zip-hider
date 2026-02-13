@@ -7,12 +7,11 @@ function App() {
   const [combinedFile, setCombinedFile] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState(null);
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'dark';
-  });
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
 
   useEffect(() => {
-    document.body.className = theme;
+    document.body.classList.remove('dark', 'light');
+    document.body.classList.add(theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
 
