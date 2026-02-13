@@ -6,6 +6,10 @@
 
 Este proyecto es una aplicación web desarrollada con React que permite combinar archivos ZIP con imágenes, ocultando el ZIP dentro de la imagen (similar al comando `copy/b` de Windows). 
 
+## 🌐 Live Demo
+
+https://zip-hider.ismola.dev/
+
 **Características principales:**
 - ✅ Procesamiento 100% del lado del cliente (sin backend)
 - ✅ No se almacenan archivos en ningún servidor
