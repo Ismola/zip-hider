@@ -6,14 +6,16 @@ function App() {
   const [zipFile, setZipFile] = useState(null);
   const [combinedFile, setCombinedFile] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file && file.type.startsWith('image/')) {
       setImageFile(file);
       setCombinedFile(null);
+      setError(null);
     } else {
-      alert('Por favor, selecciona un archivo de imagen válido');
+      setError('Por favor, selecciona un archivo de imagen válido');
     }
   };
 
@@ -22,18 +24,20 @@ function App() {
     if (file && (file.type === 'application/zip' || file.type === 'application/x-zip-compressed' || file.name.endsWith('.zip'))) {
       setZipFile(file);
       setCombinedFile(null);
+      setError(null);
     } else {
-      alert('Por favor, selecciona un archivo ZIP válido');
+      setError('Por favor, selecciona un archivo ZIP válido');
     }
   };
 
   const combineFiles = async () => {
     if (!imageFile || !zipFile) {
-      alert('Por favor, selecciona ambos archivos (imagen y ZIP)');
+      setError('Por favor, selecciona ambos archivos (imagen y ZIP)');
       return;
     }
 
     setIsProcessing(true);
+    setError(null);
 
     try {
       // Read both files as ArrayBuffer
@@ -56,7 +60,7 @@ function App() {
       setCombinedFile(file);
     } catch (error) {
       console.error('Error combining files:', error);
-      alert('Error al combinar los archivos');
+      setError('Error al combinar los archivos');
     } finally {
       setIsProcessing(false);
     }
@@ -79,6 +83,7 @@ function App() {
     setImageFile(null);
     setZipFile(null);
     setCombinedFile(null);
+    setError(null);
   };
 
   return (
@@ -86,6 +91,12 @@ function App() {
       <div className="container">
         <h1>🖼️ Zip Hider</h1>
         <p className="subtitle">Oculta archivos ZIP dentro de imágenes</p>
+
+        {error && (
+          <div className="error-message" role="alert">
+            ⚠️ {error}
+          </div>
+        )}
 
         <div className="upload-section">
           <div className="upload-box">
