@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -7,6 +7,18 @@ function App() {
   const [combinedFile, setCombinedFile] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState(null);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark';
+  });
+
+  useEffect(() => {
+    document.body.className = theme;
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
+  };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -89,8 +101,19 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Zip Hider</h1>
-        <p className="subtitle">Hide ZIP files inside images</p>
+        <div className="header">
+          <div className="header-content">
+            <h1>Zip Hider</h1>
+            <p className="subtitle">Hide ZIP files inside images</p>
+          </div>
+          <button 
+            onClick={toggleTheme} 
+            className="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? '☀' : '☾'}
+          </button>
+        </div>
 
         {error && (
           <div className="error-message" role="alert">

@@ -10,8 +10,308 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #1a1a1a;
   min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark Theme */
+body.dark {
+  background: #1a1a1a;
+}
+
+body.dark .container {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark h1 {
+  color: #e0e0e0;
+}
+
+body.dark .subtitle {
+  color: #808080;
+}
+
+body.dark .error-message {
+  background: #3a2a2a;
+  color: #ff6b6b;
+  border: 1px solid #4a3a3a;
+}
+
+body.dark .upload-box {
+  background: #1a1a1a;
+  border: 1px solid #3a3a3a;
+}
+
+body.dark .upload-box:hover {
+  border-color: #555;
+  background: #222;
+}
+
+body.dark .file-label {
+  color: #c0c0c0;
+  border: 1px solid #555;
+}
+
+body.dark .file-label:hover {
+  background: #333;
+  color: #fff;
+  border-color: #777;
+}
+
+body.dark .file-name {
+  color: #888;
+}
+
+body.dark .btn {
+  background: transparent;
+  color: #c0c0c0;
+  border: 1px solid #555;
+}
+
+body.dark .btn-primary {
+  background: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark .btn-primary:hover:not(:disabled) {
+  background: #444;
+  border-color: #777;
+}
+
+body.dark .btn-download {
+  background: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+body.dark .btn-download:hover {
+  background: #444;
+  border-color: #777;
+}
+
+body.dark .btn-secondary {
+  background: transparent;
+  color: #888;
+  border-color: #444;
+}
+
+body.dark .btn-secondary:hover {
+  background: #222;
+  border-color: #555;
+  color: #aaa;
+}
+
+body.dark .btn:disabled {
+  border-color: #333;
+}
+
+body.dark .result-section {
+  background: #1a1a1a;
+  border: 1px solid #3a3a3a;
+}
+
+body.dark .success-message {
+  color: #888;
+}
+
+body.dark .info-section {
+  background: #1a1a1a;
+  border-left: 2px solid #555;
+}
+
+body.dark .info-section h3 {
+  color: #999;
+}
+
+body.dark .info-section p {
+  color: #777;
+}
+
+body.dark .info-section code {
+  background: #222;
+  color: #aaa;
+  border: 1px solid #333;
+}
+
+body.dark .info-section strong {
+  color: #999;
+}
+
+body.dark .footer {
+  border-top: 1px solid #3a3a3a;
+  color: #666;
+}
+
+body.dark .footer a {
+  color: #888;
+}
+
+body.dark .footer a:hover {
+  color: #aaa;
+}
+
+body.dark .theme-toggle {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark .theme-toggle:hover {
+  background: #444;
+  border-color: #777;
+}
+
+/* Light Theme */
+body.light {
+  background: #f5f5f5;
+}
+
+body.light .container {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light h1 {
+  color: #2a2a2a;
+}
+
+body.light .subtitle {
+  color: #666;
+}
+
+body.light .error-message {
+  background: #fff5f5;
+  color: #c53030;
+  border: 1px solid #feb2b2;
+}
+
+body.light .upload-box {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+}
+
+body.light .upload-box:hover {
+  border-color: #999;
+  background: #f5f5f5;
+}
+
+body.light .file-label {
+  color: #4a4a4a;
+  border: 1px solid #ccc;
+}
+
+body.light .file-label:hover {
+  background: #e0e0e0;
+  color: #000;
+  border-color: #999;
+}
+
+body.light .file-name {
+  color: #666;
+}
+
+body.light .btn {
+  background: transparent;
+  color: #4a4a4a;
+  border: 1px solid #ccc;
+}
+
+body.light .btn-primary {
+  background: #e0e0e0;
+  color: #2a2a2a;
+  border-color: #ccc;
+}
+
+body.light .btn-primary:hover:not(:disabled) {
+  background: #d0d0d0;
+  border-color: #999;
+}
+
+body.light .btn-download {
+  background: #e0e0e0;
+  color: #2a2a2a;
+  border-color: #ccc;
+}
+
+body.light .btn-download:hover {
+  background: #d0d0d0;
+  border-color: #999;
+}
+
+body.light .btn-secondary {
+  background: transparent;
+  color: #666;
+  border-color: #ddd;
+}
+
+body.light .btn-secondary:hover {
+  background: #f5f5f5;
+  border-color: #ccc;
+  color: #4a4a4a;
+}
+
+body.light .btn:disabled {
+  border-color: #e0e0e0;
+}
+
+body.light .result-section {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+}
+
+body.light .success-message {
+  color: #666;
+}
+
+body.light .info-section {
+  background: #fafafa;
+  border-left: 2px solid #ccc;
+}
+
+body.light .info-section h3 {
+  color: #555;
+}
+
+body.light .info-section p {
+  color: #666;
+}
+
+body.light .info-section code {
+  background: #f0f0f0;
+  color: #666;
+  border: 1px solid #e0e0e0;
+}
+
+body.light .info-section strong {
+  color: #4a4a4a;
+}
+
+body.light .footer {
+  border-top: 1px solid #e0e0e0;
+  color: #888;
+}
+
+body.light .footer a {
+  color: #666;
+}
+
+body.light .footer a:hover {
+  color: #4a4a4a;
+}
+
+body.light .theme-toggle {
+  background: #e0e0e0;
+  color: #2a2a2a;
+  border: 1px solid #ccc;
+}
+
+body.light .theme-toggle:hover {
+  background: #d0d0d0;
+  border-color: #999;
 }
 
 .App {
@@ -23,17 +323,35 @@ body {
 }
 
 .container {
-  background: #2a2a2a;
-  border: 1px solid #3a3a3a;
   border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   padding: 50px;
   max-width: 800px;
   width: 100%;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.header-content {
+  flex: 1;
+}
+
+.theme-toggle {
+  padding: 10px 16px;
+  border-radius: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 20px;
 }
 
 h1 {
-  color: #e0e0e0;
   margin-bottom: 8px;
   text-align: center;
   font-size: 2.2rem;
@@ -44,7 +362,6 @@ h1 {
 
 .subtitle {
   text-align: center;
-  color: #808080;
   margin-bottom: 40px;
   font-size: 0.95rem;
   font-weight: 300;
@@ -52,9 +369,6 @@ h1 {
 }
 
 .error-message {
-  background: #3a2a2a;
-  color: #ff6b6b;
-  border: 1px solid #4a3a3a;
   border-radius: 0;
   padding: 12px;
   margin-bottom: 30px;
@@ -77,25 +391,16 @@ h1 {
 }
 
 .upload-box {
-  background: #1a1a1a;
-  border: 1px solid #3a3a3a;
   border-radius: 0;
   padding: 40px 20px;
   text-align: center;
   transition: all 0.2s ease;
 }
 
-.upload-box:hover {
-  border-color: #555;
-  background: #222;
-}
-
 .file-label {
   display: inline-block;
   background: transparent;
-  color: #c0c0c0;
   padding: 12px 30px;
-  border: 1px solid #555;
   border-radius: 0;
   cursor: pointer;
   font-weight: 400;
@@ -106,19 +411,12 @@ h1 {
   text-transform: uppercase;
 }
 
-.file-label:hover {
-  background: #333;
-  color: #fff;
-  border-color: #777;
-}
-
 .file-input {
   display: none;
 }
 
 .file-name {
   margin-top: 15px;
-  color: #888;
   font-weight: 300;
   word-break: break-all;
   font-size: 0.85rem;
@@ -131,15 +429,12 @@ h1 {
 
 .btn {
   padding: 14px 40px;
-  border: 1px solid #555;
   border-radius: 0;
   font-size: 0.85rem;
   font-weight: 400;
   cursor: pointer;
   transition: all 0.2s ease;
   margin: 8px;
-  background: transparent;
-  color: #c0c0c0;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -147,53 +442,15 @@ h1 {
 .btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
-  border-color: #333;
-}
-
-.btn-primary {
-  background: #333;
-  color: #fff;
-  border-color: #555;
-}
-
-.btn-primary:hover:not(:disabled) {
-  background: #444;
-  border-color: #777;
-}
-
-.btn-download {
-  background: #333;
-  color: #fff;
-  border-color: #555;
-}
-
-.btn-download:hover {
-  background: #444;
-  border-color: #777;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: #888;
-  border-color: #444;
-}
-
-.btn-secondary:hover {
-  background: #222;
-  border-color: #555;
-  color: #aaa;
 }
 
 .result-section {
   margin-top: 30px;
   padding: 30px;
-  background: #1a1a1a;
   border-radius: 0;
-  border: 1px solid #3a3a3a;
 }
 
 .success-message {
-  color: #888;
   font-weight: 300;
   margin-bottom: 20px;
   font-size: 0.95rem;
@@ -201,15 +458,12 @@ h1 {
 }
 
 .info-section {
-  background: #1a1a1a;
-  border-left: 2px solid #555;
   padding: 25px;
   border-radius: 0;
   margin-top: 40px;
 }
 
 .info-section h3 {
-  color: #999;
   margin-bottom: 15px;
   font-weight: 300;
   font-size: 1rem;
@@ -218,7 +472,6 @@ h1 {
 }
 
 .info-section p {
-  color: #777;
   line-height: 1.8;
   margin-bottom: 12px;
   font-size: 0.9rem;
@@ -226,36 +479,25 @@ h1 {
 }
 
 .info-section code {
-  background: #222;
   padding: 3px 8px;
   border-radius: 0;
-  color: #aaa;
   font-family: 'Courier New', monospace;
-  border: 1px solid #333;
 }
 
 .info-section strong {
-  color: #999;
   font-weight: 400;
 }
 
 .footer {
   margin-top: 40px;
   padding-top: 25px;
-  border-top: 1px solid #3a3a3a;
   text-align: center;
-  color: #666;
   font-size: 0.8rem;
   font-weight: 300;
 }
 
 .footer a {
-  color: #888;
   text-decoration: none;
   font-weight: 300;
   transition: color 0.2s ease;
-}
-
-.footer a:hover {
-  color: #aaa;
 }
