@@ -89,19 +89,19 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>🖼️ Zip Hider</h1>
+        <h1>Zip Hider</h1>
         <p className="subtitle">Hide ZIP files inside images</p>
 
         {error && (
           <div className="error-message" role="alert">
-            ⚠️ {error}
+            {error}
           </div>
         )}
 
         <div className="upload-section">
           <div className="upload-box">
             <label htmlFor="image-upload" className="file-label">
-              📷 Select Image
+              Select Image
             </label>
             <input
               id="image-upload"
@@ -110,12 +110,12 @@ function App() {
               onChange={handleImageChange}
               className="file-input"
             />
-            {imageFile && <p className="file-name">✅ {imageFile.name}</p>}
+            {imageFile && <p className="file-name">{imageFile.name}</p>}
           </div>
 
           <div className="upload-box">
             <label htmlFor="zip-upload" className="file-label">
-              📦 Select ZIP
+              Select ZIP
             </label>
             <input
               id="zip-upload"
@@ -124,7 +124,7 @@ function App() {
               onChange={handleZipChange}
               className="file-input"
             />
-            {zipFile && <p className="file-name">✅ {zipFile.name}</p>}
+            {zipFile && <p className="file-name">{zipFile.name}</p>}
           </div>
         </div>
 
@@ -134,24 +134,24 @@ function App() {
             disabled={!imageFile || !zipFile || isProcessing}
             className="btn btn-primary"
           >
-            {isProcessing ? '⏳ Processing...' : '🔗 Combine Files'}
+            {isProcessing ? 'Processing...' : 'Combine Files'}
           </button>
 
           {combinedFile && (
             <div className="result-section">
-              <p className="success-message">✅ Files combined successfully!</p>
+              <p className="success-message">Files combined successfully</p>
               <button onClick={downloadCombinedFile} className="btn btn-download">
-                💾 Download Image with Hidden ZIP
+                Download Image
               </button>
               <button onClick={reset} className="btn btn-secondary">
-                🔄 New
+                Reset
               </button>
             </div>
           )}
         </div>
 
         <div className="info-section">
-          <h3>ℹ️ How it works</h3>
+          <h3>How it works</h3>
           <p>
             This application combines a ZIP file with an image, hiding the ZIP
             inside the image (similar to the Windows <code>copy/b</code> command).
@@ -160,15 +160,23 @@ function App() {
             The resulting image can be opened normally, but it also contains
             the ZIP file which can be extracted by changing the extension to .zip.
           </p>
+        </div>
+
+        <div className="info-section">
+          <h3>Privacy & Security</h3>
           <p>
-            <strong>All processing is done in your browser.</strong> No files
-            are sent to any server.
+            <strong>100% Client-Side Processing.</strong> All operations are performed
+            locally in your browser. Nothing is uploaded to any server.
+          </p>
+          <p>
+            No files are stored. No logs are kept. No tracking. No data collection.
+            Everything is completely anonymous and private.
           </p>
         </div>
 
         <footer className="footer">
           <p>
-            Made with ❤️ by <a href="https://github.com/Ismola" target="_blank" rel="noopener noreferrer">Ismola</a>
+            Made with love by <a href="https://github.com/Ismola" target="_blank" rel="noopener noreferrer">Ismola</a>
             {' • '}
             <a href="https://github.com/Ismola/zip-hider" target="_blank" rel="noopener noreferrer">
               View on GitHub
