@@ -4,13 +4,14 @@
 
 ## 📋 Descripción
 
-Este proyecto es una aplicación web desarrollada con React que permite combinar archivos ZIP con imágenes, ocultando el ZIP dentro de la imagen (similar al comando `copy/b` de Windows). 
+Este proyecto es una aplicación web desarrollada con React que permite combinar archivos ZIP con imágenes, ocultando el ZIP dentro de la imagen (similar al comando `copy/b` de Windows).
 
 ## 🌐 Live Demo
 
-https://zip-hider.ismola.dev/
+<https://zip-hider.ismola.dev/>
 
 **Características principales:**
+
 - ✅ Procesamiento 100% del lado del cliente (sin backend)
 - ✅ No se almacenan archivos en ningún servidor
 - ✅ Privacidad total - todo se procesa en tu navegador
@@ -25,6 +26,7 @@ https://zip-hider.ismola.dev/
 4. Descargas la imagen resultante que contiene el ZIP oculto
 
 La imagen resultante:
+
 - Se puede abrir y visualizar normalmente como cualquier imagen
 - Contiene el archivo ZIP oculto al final
 - Para extraer el ZIP, simplemente cambia la extensión del archivo a `.zip`
@@ -34,22 +36,26 @@ La imagen resultante:
 ### Opción 1: Con Docker Compose (Recomendado)
 
 1. Clona el repositorio:
+
 ```bash
 git clone https://github.com/Ismola/zip-hider.git
 cd zip-hider
 ```
 
-2. Inicia la aplicación:
+1. Inicia la aplicación:
+
 ```bash
 docker-compose up -d
 ```
 
-3. Accede a la aplicación en tu navegador:
+1. Accede a la aplicación en tu navegador:
+
 ```
 http://localhost
 ```
 
 Para detener la aplicación:
+
 ```bash
 docker-compose down
 ```
@@ -57,22 +63,26 @@ docker-compose down
 ### Opción 2: Desarrollo Local
 
 1. Clona el repositorio:
+
 ```bash
 git clone https://github.com/Ismola/zip-hider.git
 cd zip-hider/client
 ```
 
-2. Instala las dependencias:
+1. Instala las dependencias:
+
 ```bash
 npm install
 ```
 
-3. Inicia el servidor de desarrollo:
+1. Inicia el servidor de desarrollo:
+
 ```bash
 npm start
 ```
 
-4. Accede a la aplicación en:
+1. Accede a la aplicación en:
+
 ```
 http://localhost:3000
 ```
@@ -102,16 +112,19 @@ Los archivos optimizados se generarán en la carpeta `client/build/`.
 
 ## 📖 Uso de la Imagen Resultante
 
-### Para ver la imagen:
+### Para ver la imagen
+
 - Abre el archivo normalmente con cualquier visor de imágenes
 
-### Para extraer el ZIP:
+### Para extraer el ZIP
+
 1. Cambia la extensión del archivo de `.jpg` (o la que sea) a `.zip`
 2. Extrae el archivo ZIP con tu programa favorito (WinRAR, 7-Zip, etc.)
 
 ## 🤝 Contribuciones
 
 Las contribuciones son bienvenidas. Por favor:
+
 1. Haz fork del proyecto
 2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
 3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
