@@ -1,6 +1,6 @@
 services:
   web:
-    image:  ghcr.io/ismola/zip-hider
+    image:  ghcr.io/ismola/zip-hider:main
     expose:
       - "80"
     restart: unless-stopped
